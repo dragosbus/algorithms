@@ -1,0 +1,32 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.board {
+	width: 80%;
+	margin: 20px auto;
+	border: 2px solid black;
+}
+
+.white,
+.black {
+	width: 12.5%;
+	height: 100px;
+	display: inline-block;
+}
+
+.white {
+	background: #fff;
+}
+
+.black {
+	background: black;
+}
+
+@media (max-width: 500px) {
+	.white,
+	.black {
+		height: 50px;
+	}
+}
