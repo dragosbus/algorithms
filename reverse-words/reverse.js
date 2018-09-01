@@ -1,7 +1,10 @@
-const reverseWords = str => {
-    return str.split(' ').map(word=>{
-        return word.split('').reverse().join('');
-    });
+const reverse = arr => {
+    let compl = 0;
+    for(let i=Math.floor((arr.length-1)/2);i>=0;i--) {
+        compl = arr.length - i - 1;
+        [arr[i], arr[compl]] = [arr[compl], arr[i]]
+    }
+    console.log(arr);
 };
 
-console.log(reverseWords('This is a string'))
+reverse([1,2,3,4,5]);
