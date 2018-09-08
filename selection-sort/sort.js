@@ -1,16 +1,17 @@
 const selectionSort = arr => {
-    let min;
-    let temp;
     for(let i=0;i<arr.length;i++) {
-        min = Math.min(...arr.slice(i));
-        if(min < arr[i]) {
-            temp = arr[i];
-            arr[arr.indexOf(min)] = temp;
-            arr[i] = min;
+        let min = i;
+        for(let j=i+1;j<arr.length;j++) {
+            if(arr[min] > arr[j]) {
+                min = j;
+            }
+        }
+
+        if(min !== i) {
+            [arr[i], arr[min]] = [arr[min], arr[i]];
         }
     }
-
     return arr;
 };
 
-console.log(selectionSort([6,5,4,3,2,1,0,10,14,-6]));
+console.log(selectionSort([1, 4, 2, 8, 345, 123, 43, 32, 5643, 63, 123, 43, 2, 55, 1, 234, 92]));
